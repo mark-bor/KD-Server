@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
-import { PROJECTS } from 'src/data/PROJECTS';
+import { PROJECTS } from '../data/PROJECTS';
 
 @Injectable()
 export class ProjectsService {
