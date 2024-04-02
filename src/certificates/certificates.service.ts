@@ -7,11 +7,11 @@ import { CERTIFICATES } from '../data/CERTIFICATES';
 @Injectable()
 export class CertificatesService {
   getAll() {
-    return CERTIFICATES;
+    return JSON.stringify(CERTIFICATES);
   }
 
   getOne(id: number) {
-    return CERTIFICATES.find((c) => c.id===id);
+    return JSON.stringify(CERTIFICATES.find((c) => c.id===id));
   }
 
   // create(createCertificateDto: CreateCertificateDto) {

@@ -21,11 +21,11 @@ export class ProjectsService {
       list = list.filter((p) => types.includes(p.type));
     }
 
-    return list;
+    return JSON.stringify(list);
   }
 
   getOne(id: string) {
-    return PROJECTS.find((p) => p.id===id);
+    return JSON.stringify(PROJECTS.find((p) => p.id===id));
   }
 
   // create(createProjectDto: CreateProjectDto) {
