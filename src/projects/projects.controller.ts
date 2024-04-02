@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 // import { CreateProjectDto } from './dto/create-project.dto';
 // import { UpdateProjectDto } from './dto/update-project.dto';
@@ -8,8 +8,12 @@ export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
 
   @Get()
-  getAll() {
-    return this.projectsService.getAll();
+  getAll(
+    @Query('status') status: string,
+    @Query('category') category: string,
+    @Query('type') type: string
+  ) {
+    return this.projectsService.getAll(status, category, type);
   }
 
   @Get(':id')
