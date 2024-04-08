@@ -28,7 +28,7 @@ export const PROJECTS: ProjectData[] = [
     title: "Kitsune Diary",
     description: "Personal website with blog, projects, and professional information about me.",
     steck: ["HTML", "CSS", "SCSS", "TypeScript", "React", "Next", "Redux"],
-    status: "in-process",
+    status: "completed",
     category: "personal",
     type: "other",
   },
