@@ -1,7 +1,6 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
 
-
 @Controller('api/projects')
 export class ProjectsController {
   constructor(private readonly projectsService: ProjectsService) {}
@@ -16,9 +15,7 @@ export class ProjectsController {
   }
 
   @Get(':id')
-  getOne(
-    @Param('id') id: string,
-  ) {
+  getOne(@Param('id') id: string) {
     return this.projectsService.getOne(id);
   }
 }

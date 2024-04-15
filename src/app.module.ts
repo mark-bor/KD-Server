@@ -1,17 +1,12 @@
-import {
-  Module,
-  NestModule,
-  MiddlewareConsumer
- } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { 
-  ProjectsModule, 
-  CertificatesModule, 
-  ArticlesModule 
+import {
+  ProjectsModule,
+  CertificatesModule,
+  ArticlesModule,
 } from './api/index';
 import { APIKeyMiddleware } from './middlewares/apiKey.middleware';
-
 
 @Module({
   imports: [ProjectsModule, CertificatesModule, ArticlesModule],
@@ -20,8 +15,6 @@ import { APIKeyMiddleware } from './middlewares/apiKey.middleware';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-    .apply(APIKeyMiddleware)
-    .forRoutes('api');
+    consumer.apply(APIKeyMiddleware).forRoutes('api');
   }
 }
